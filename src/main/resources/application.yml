@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active:
+      - visa-connector-1
+---
+server:
+  port: 8085
+spring:
+  application:
+    name: message-distributor
+  instance:
+    name: message-distributor-1
+  profiles:
+    - app-dev-1
+
+---
+server:
+  port: 8080
+spring:
+  application:
+    name: visa-connector
+  instance:
+    name: visa-connector-1
+  profiles:
+    - visa-connector-1
